@@ -77,14 +77,14 @@
         <ul>
             <li>Los bloques de código se definen con los dos puntos ":"</li>
             <pre>
-            for in in xrange(5):
+            for i in xrange(5):
                  print i
            </pre>
            <li>Para definir cada bloque de código se utilizan espacios 
            o tabulaciones (se recomienda espacios o configurar las 
            tabulaciones como espacios)</li>
            <pre>
-           if type(x) is int:
+           if <b>type(x)</b> is int:
                 if x < 0:
                      print "Es un entero negativo"
                 elif x > 0:
@@ -99,13 +99,13 @@
             <strong>Entre otras funciones...</strong></br>
         </q>
             <ul>
-                <li>El usuario introduce un valor:</li>
+                <li><b>raw_input()</b>: El usuario introduce un valor.</li>
                 <pre>
           def nombre_usuario():
                 nombre = <b>raw_input("¿Cuál es tu nombre?")</b>
                 print "Bienvenid@ %s" % (nombre)
                 </pre>
-                <li>Longitud de una cadena, lista, diccionario, etc...:</li>
+                <li><b>len()</b>: Longitud de una cadena, lista, diccionario, etc...</li>
                 <pre>
           lista = [5,6,7,8]
           <b>len(lista)</b>
@@ -120,7 +120,7 @@
             <strong>Entre otras funciones...</strong></br>
         </q>
         <ul>
-            <li>El elemento máximo de una lista, tupla, etc...</li>
+            <li><b>max()</b>: El elemento máximo de una lista, tupla, etc...</li>
             <pre>
             lista = [5,6,7]
             <b>max(lista)</b>
@@ -129,7 +129,7 @@
             conjunto = set([8,9,67,8])
             <b>max(conjunto)</b>
             </pre>
-            <li>Saber si un elemeto está incluido en otro:</li>
+            <li><b>in</b>: Saber si un elemeto está incluido en otro</li>
             <pre>
             "hola" <b>in</b> "hola mundo!"
             3 <b>in</b> [5,6,7,8,3]
@@ -140,44 +140,135 @@
     
     <div class="step slide" data-x="-2100" data-y="-600" data-rotate="-50">
         <q>
-            <strong></strong></br>
+            <strong>Métodos de Strings</strong></br>
         </q>
+            <ul>
+                <li>split()</li>
+                <li>join()</li>
+                <li>find()</li>
+                <li>strip()</li>
+                <li>lower()/upper()</li>
+                <li>replace()</li>
+                <li>center()</li>
+                <li>swapcase()</li>
+                <li>isalpha()</li>
+                <li>endswith()</li>
+            </ul>
     </div>
     
     <div class="step slide" data-x="-2100" data-y="600" data-rotate="-75">
         <q>
-            <strong></strong></br>
+            <strong>Listas y Tuplas</strong></br>
         </q>
+            <ul>
+                <li>Listas son mutables, las tuplas no</li>
+                <li>Para declarar listas se usan corchetes</li>
+                <li>Para declarar tuplas, se usan paréntesis</li>
+                <li>Tanto listas como tuplas pueden tener elementos diversos</li>
+                <li>Las listas permiten agregar y borrar elementos</li>
+                <li>Las tuplas no permiten agregar o borrar elementos</li>
+                <li>En listas y tuplas se acceden a sus elementos 
+                usando índices positivos y negativos entre corchetes</li>
+                <li>Para obtener un slice, se utilizan los ":"</li>
+            </ul>
     </div>
     
     <div class="step slide" data-x="-1000" data-y="600">
         <q>
-            <strong></strong></br>
+            <strong>Métodos de Listas</strong></br>
         </q>
+            <ul>
+                <li>append()</li>
+                <li>insert()</li>
+                <li>remove()</li>
+                <li>pop()</li>
+                <li>reverse()</li>
+                <li>sort()</li>
+                <li>sorted()</li>
+                <li>extend()</li>
+            </ul>
     </div>
     
     <div class="step slide" data-x="0" data-y="600">
         <q>
-            <strong></strong></br>
+            <strong>Diccionarios</strong></br>
         </q>
+        <ul>
+            <li>Conocido también como matrices/arrays asociativos</li>
+            <li>Son componentes basados en llave:valor</li>
+            <li>Son mutables y pueden tener cualquier tipo de valor</li>
+            <li>Son colecciones de datos llave/valor</li>
+            <li>Se declaran con "{}"</li>
+        </ul>
+        </br><pre>
+        diccionario = {'curso':'base de datos',
+        'taller':'python','laboratorio':6}
+        
+        for k, v in x.<b>items()</b>: print "%s: %s" % (k, v)
+        </pre>
     </div>
     
     <div class="step slide" data-x="1000" data-y="600" data-rotate="-90">
         <q>
-            <strong></strong></br>
+            <strong>for..in</strong></br>
         </q>
+        En python, podemos recorrer objetos iterables con for.
+        Por ejemplo: listas, tuplas, diccionarios, xrange()
+        o conjuntos.
+        </br><pre>
+
+        >> lista = [11, 4.5, 'DB', 'python']
+        >> diccionario = {'curso':'base de datos', \
+        'taller':'python','laboratorio':6}
+        >> <b>for</b> i in lista:
+                print i
+        >> <b>for</b> i, j in diccionario.<b>items()</b>:
+                print i, j
+        >> <b>for</b> i, j in <b>enumerate(lista)</b>:
+                print i, j
+        >> <b>for</b> i in (1,2,3):
+                print i
+                <b>break</b>
+        </pre>
+        
     </div>
     
     <div class="step slide" data-x="2000" data-y="600" data-rotate="-90">
         <q>
-            <strong></strong></br>
+            <strong>range() y xrange()</strong></br>
         </q>
+        <ul>
+            <li>La función <b>range()</b> genera una lista la cual es
+            manejada elemento por elemento.</li>
+            <li>La función <b>xrange()</b> produce un objeto iterable a través del cual
+         se puede pasar sin el peligro de lo que podría ser un objeto (lista)
+         muy grande.</li>
+         <li>for x in range(10000), genera una lista</li>
+         <li>for x in xrange(10000), genera un iterable</li>
+        </ul>
+        </br><pre>
+        >> type(<b>range(100)</b>)
+        >> type(<b>xrange(100)</b>)
+        </pre>
+
     </div>
     
     <div class="step slide" data-x="2000" data-y="-600" data-rotate="-90">
         <q>
-            <strong></strong></br>
+            <strong>while</strong></br>
         </q>
+        <ul>
+            <li>while funciona como lo hace en casi todos los lenguajes 
+            de programación</li>
+            <li>Itera de forma indefinida evaluando una condición en cada
+            ejecución</li>
+        </ul>
+        </br><pre>
+        >> i = 0
+        >> <b>while</b> i < 10:
+               print i
+               i += 1
+        </pre>
     </div>
     
     <div class="step slide" data-x="2100" data-y="-1800" data-rotate="-45">
