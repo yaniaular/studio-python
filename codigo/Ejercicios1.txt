@@ -1,0 +1,29 @@
+1.- Crear una clase llamada ProcesadorDeNombre que requiera el nombre y el 
+apellido y con los metodos set y get, obtenerlos y modificarlos.
+
+2.- Crear la clase Vehiculo con los metodos encender, apagar, acelerar, 
+y frenar. La clase debe ser lo suficientemente inteligente para que sepa 
+que no puede
+
+	-Apagar sin estar encendido
+	-Frenar sin estar acelerando
+	-Encender sin estar apagado
+	-Acelerar si no esta detenido
+	
+3.- Crear una subclase de Vehiculo que agregue al menos 3 funcionalidades 
+adicionales como por ejemplo:
+
+	-Subir los vidrios
+	- Encender radio
+	- Usar los limpiaparabrisas
+	- la clase debe ser inteligente y contener metodos de encendido y apagado
+	
+4.- Crear una clase que procese la edad de una persona y a traves de metodos 
+verifique por metodos, retornando booleanos, si pertenece a estos grupos de 
+edad y ademas, pueda ser modificada y luego revisar otra vez
+
+-0 a 10
+-11 a 20
+-21 a 40
+-41 a 60
+-mayor a 60

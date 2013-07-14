@@ -273,37 +273,102 @@
     
     <div class="step slide" data-x="2100" data-y="-1800" data-rotate="-45">
         <q>
-            <strong></strong></br>
+            <strong>def..return</strong></br>
         </q>
+        <ul>
+            <li>Las funciones y los métodos se definen con <b>def</b></li>
+            <li>Para retornar un objeto utilizamos <b>return</b></li>
+            <li>Los argumentos pueden tener valores pretedeterminados</li>
+            <li>Se pueden retornar múltiples objetos</li>
+            <li>Si la funcion no posee return, retornará None por defecto</li>
+        </ul>
+        <pre>
+            >> def f(a):
+                   return a
+            >> def f(a, b=2):
+                   return a + b, a - b
+        </pre>
     </div>
 
     <div class="step slide" data-x="3000" data-y="-1000">
         <q>
-            <strong></strong></br>
+            <strong>Crear parametros.py</strong>
         </q>
+        <pre>
+        <b># -*- encoding: utf-8 -*-
+        #!/usr/bin/python</b> 
+
+        <b>def</b> TiendaDeQueso(kind, <b>*arguments, **keywords</b>):
+            print "-- ¿Tienes ", kind, "?"
+            print "-- Lo siento, en este momento no tenemos ", kind
+            for arg in arguments: print arg
+            print "-" * 40
+            keys = sorted(keywords.keys())
+            for kw in keys:
+                print kw, ":", keywords[kw]
+        
+        TiendaDeQueso("Quesoburger", "Es derretido, señor",
+           "El queso es realmente muy derretido, señor",
+           vendedor='Michael Palin', cliente="John Cleese",
+           tienda="Cheese Shop Sketch")
+        </pre>
     </div>
     
     <div class="step slide" data-x="3000" data-y="0">
         <q>
-            <strong></strong></br>
+            <strong>if..elif..else</strong></br>
+            Condicionales...
+            <pre>
+            for i in xrange(3):
+                if i == 0:
+                    print "cero"
+                elif i == 1:
+                    print "uno"
+                else:
+                    print "dos"
+            </pre>
         </q>
     </div>
     
     <div class="step slide" data-x="3000" data-y="1000">
         <q>
-            <strong></strong></br>
+            <strong>Algunas funciones...</strong></br>
+            <ul>
+                <li>pass</li>
+                <li>continue</li>
+                <li>break</li>
+                <li>lambda</li>
+                <li>with</li>
+                <li>as</li>
+                <li>eval</li>
+                <li>exec<li>
+                <li>compare</li>
+            </ul>
         </q>
     </div>
     
     <div class="step slide" data-x="2000" data-y="1500">
         <q>
-            <strong></strong></br>
+            <strong>Otras funciones...</strong></br>
         </q>
+        Sys
+        Lambda
+        Funciones Anidadas
+        Filter
+        Map
     </div>
     
     <div class="step slide" data-x="1000" data-y="1500">
         <q>
-            <strong></strong></br>
+            <strong>Creando clases con python</strong></br>
+            <ul>
+                <li>Se utiliza la palabra reservada class</li>
+                <li>Luego se definen los atributos</li>
+                <li>La referencia self, es obligatoria</li>
+                <li>Los atributos se establecen dentro del __init__</li>
+                <li></li>
+                <li></li>
+            </ul>
         </q>
     </div>
     
@@ -325,6 +390,39 @@
         </q>
     </div>
 
+    <div class="step slide" data-x="-2000" data-y="2500" data-z="-1000" data-rotate="45">
+        <q>
+            <strong></strong></br>
+        </q>
+    </div>
+    <div class="step slide" data-x="-500" data-y="2500" >
+        <q>
+            <strong></strong></br>
+        </q>
+    </div>
+    
+    <div class="step slide" data-x="500" data-y="2500" data-rotate="-45" data-z="-500">
+        <q>
+            <strong></strong></br>
+        </q>
+    </div>
+    <div class="step slide" data-x="1700" data-y="2500">
+        <q>
+            <strong></strong></br>
+        </q>
+    </div>
+    
+    <div class="step slide" data-x="3000" data-y="2500">
+        <q>
+            <strong></strong></br>
+        </q>
+    </div>
+
+    <div class="step slide" data-x="4000" data-y="2500" data-rotate="-90">
+        <q>
+            <strong></strong></br>
+        </q>
+    </div>
     <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
     </div>
 
