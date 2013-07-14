@@ -68,8 +68,6 @@
                 <li>Booleans</li>
             </ul>
         </q>
-        
-    
     </div>
 
     <div class="step slide" data-x="1000" data-y="-700">
@@ -104,23 +102,40 @@
                 <li>El usuario introduce un valor:</li>
                 <pre>
           def nombre_usuario():
-                nombre = raw_input("¿Cuál es tu nombre?")
+                nombre = <b>raw_input("¿Cuál es tu nombre?")</b>
                 print "Bienvenid@ %s" % (nombre)
                 </pre>
-                <li>Longitud de una cadena, lista, diccionario, entre otros:</li>
+                <li>Longitud de una cadena, lista, diccionario, etc...:</li>
                 <pre>
           lista = [5,6,7,8]
-          len(lista)
+          <b>len(lista)</b>
           cadena = "Hola Mundo"
-          len(cadena)
+          <b>len(cadena)</b>
                 </pre>
             </ul>
     </div>
 
     <div class="step slide" data-x="-1100" data-y="-600" data-z="-1000">
         <q>
-            <strong></strong></br>
+            <strong>Entre otras funciones...</strong></br>
         </q>
+        <ul>
+            <li>El elemento máximo de una lista, tupla, etc...</li>
+            <pre>
+            lista = [5,6,7]
+            <b>max(lista)</b>
+            tupla = (8,9,10)
+            <b>max(tupla)</b>
+            conjunto = set([8,9,67,8])
+            <b>max(conjunto)</b>
+            </pre>
+            <li>Saber si un elemeto está incluido en otro:</li>
+            <pre>
+            "hola" <b>in</b> "hola mundo!"
+            3 <b>in</b> [5,6,7,8,3]
+            10 <b>in</b> (5,6,7,8,3)
+            "lechuga" <b>in</b> ["manzana","cambur",7.8,"lechuga",5]
+            </pre>
     </div>
     
     <div class="step slide" data-x="-2100" data-y="-600" data-rotate="-50">
