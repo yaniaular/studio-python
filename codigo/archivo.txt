@@ -1,0 +1,4 @@
+Linea 1 del archivo.txt
+Linea 2 del archivo.txt
+Linea 3 del archivo.txt
+

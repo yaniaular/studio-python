@@ -349,17 +349,14 @@
         <p id="pagina">16</p>
         <q>
             <strong>Algunas funciones...</strong></br>
+        </q>
             <ul>
                 <li>pass</li>
                 <li>continue</li>
                 <li>break</li>
-                <li>lambda</li>
-                <li>with</li>
-                <li>as</li>
-                <li>eval, exec y compile</li>
-                <li>compare</li>
+                <li>eval</li>
+                <li>try..exception</li>
             </ul>
-        </q>
     </div>
     
     <div class="step slide" data-x="2000" data-y="1500">
@@ -367,32 +364,59 @@
         <q>
             <strong>Otras funciones...</strong></br>
         </q>
-        Sys
-        Lambda
-        Funciones Anidadas
-        Filter
-        Map
+        <ul>
+            <li>Recibir argumentos al ejecutar el script</li> 
+            <li>Funciones Anidadas</li>
+            <li>lambda</li>
+            <li>filter</li>
+            <li>map</li>
+            <li>pdb.set_trace()</li>
+    </ul>
     </div>
     
     <div class="step slide" data-x="1000" data-y="1500">
         <p id="pagina">18</p>
         <q>
-            <strong>Creando clases con python</strong></br>
-            <ul>
-                <li>Se utiliza la palabra reservada class</li>
-                <li>Luego se definen los atributos</li>
-                <li>La referencia self, es obligatoria</li>
-                <li>El constructor en python es __init__</li>
-                <li>Para Heredar de otra clase es <b>class miclase(claseAheredar)</b></li>
-            </ul>
+            <strong>Lectura de archivos</strong></br>
         </q>
+        <strong>Forma incorrecta</strong>
+        <pre>
+        for line in <b>open</b>("archivo.txt"):                                                
+            print line   
+        </pre>
+        <p align="justify">
+        El problema con este código es que deja el archivo abierto por                 
+        una cantidad indeterminada de tiempo después de que el código                  
+        ha terminado de ejecutarse. Esto no es un problema en secuencias               
+        de comandos simples, pero puede ser un problema para aplicaciones              
+        más grandes.</p>
+        <strong>Forma correcta</strong>
+        <pre>
+        <b>with</b> <b>open</b>('archivo.txt', 'r') <b>as</b> f:
+            for line in f:                                                              
+                print line
+        <b>with</b> <b>open</b>('output.txt', 'w') <b>as</b> f:
+            f.write('Hi there!')        
+        </pre>   
     </div>
     
     <div class="step slide" data-x="0" data-y="1500">
         <p id="pagina">19</p>
         <q>
-            <strong></strong></br>
+            <strong>Creando clases con python</strong></br>
         </q>
+            <ul>
+                <li>Se utiliza la palabra reservada class</li>
+                <li>Luego se definen los atributos</li>
+                <li>La referencia self, es obligatoria</li>
+                <li>El constructor en python es __init__</li>
+                <li>Para heredar de otra clase es <b>class miclase(claseAheredar)</b></li>
+                <li>Para importar todas las clases disponibles en un archivo.py 
+                se importará con "from archivo import *"</li> 
+            </ul>
+            </br>
+            Crearemos un archivo llamado clases.py
+            
     </div>
     
     <div class="step slide" data-x="-1000" data-y="1500">

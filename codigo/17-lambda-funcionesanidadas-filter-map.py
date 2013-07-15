@@ -40,4 +40,5 @@ def flambda(s):
 	
 print flambda('Esta ahora lloviendo perros y gatos')
 
-
+import pdb
+pdb.set_trace()
