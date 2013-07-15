@@ -403,7 +403,7 @@
     <div class="step slide" data-x="0" data-y="1500">
         <p id="pagina">19</p>
         <q>
-            <strong>Creando clases con python</strong></br>
+            <strong>Un poco de POO. Creando clases...</strong></br>
         </q>
             <ul>
                 <li>Se utiliza la palabra reservada class</li>
@@ -422,55 +422,183 @@
     <div class="step slide" data-x="-1000" data-y="1500">
         <p id="pagina">20</p>
         <q>
-            <strong></strong></br>
+            <strong>List comprehensions</strong></br>
         </q>
+        <ul>
+            <li>Creando un for dentro de una lista</br>
+            >> [x for x in xrange(1, 7374, 233)]</li>
+            <li>Si revisamos que tipo de objeto es,
+            podremos observar que es una lista</li>
+            <li>Puede recibir condicionales y de evaluar
+            verdadero, retornaran el objeto del
+            momento del ciclo</li>
+        </ul>
+        </br>
+        <pre>
+        >> [x for x in xrange(1, 20) if x % 2 is 0]
+        >> [x for x in xrange(1, 20) if x % 2 is not 0]
+        </pre>
     </div>
     
     <div class="step slide" data-x="-2000" data-y="1700">
         <p id="pagina">21</p>
         <q>
-            <strong></strong></br>
+            <strong>List comprehensions</strong></br>
         </q>
+        <pre>
+        import math
+        def exacta(x):
+            y = math.sqrt(x)
+            if y.is_integer():
+                z = True
+            else:
+                z = False
+            return z
+        def f(x):
+            if x % 2 is 0:
+                y = True
+            else:
+                y = False
+            return y
+        [x for x in xrange(1, 100) if not f(x) and exacta(x)]
+        </pre>
     </div>
 
     <div class="step slide" data-x="-2000" data-y="2500" data-z="-1000" data-rotate="45">
         <p id="pagina">22</p>
         <q>
-            <strong></strong></br>
+            <strong>Decoradores</strong></br>
         </q>
+        <ul>
+            <li>Un decorador en Python realiza una tarea
+            parecida a lo que C nos provee en una
+            macro de preprocesamiento
+            </li>
+            <li>
+            Los decoradores nos permiten inyectar o
+            modificar código en funciones o clases
+            </li>
+            <li>
+            La aplicación de un decorador es
+            empleada con la utilización del
+            arroba (@) antes de la palabra
+            utilizada
+            </li>
+            <li>Un decorador es aplicado a la definición
+            de la función al colocarlo en la línea
+            anterior a su definición</li>
+            <li> Cuando el compilador pasa sobre este
+            código, la función es compilada y el
+            objeto resultante es pasado al código del
+            decorador, lo que hará algo para producir
+            un objeto que sera sustituido por la
+            función inicial</li>
     </div>
     <div class="step slide" data-x="-500" data-y="2500" >
         <p id="pagina">23</p>
         <q>
-            <strong></strong></br>
+            <strong>Decoradores</strong></br>
         </q>
+        <pre>
+            class Autenticar(object):                                                       
+                def __init__(self, f):                                                      
+                    self.f = f                                                                                                                                 
+                def __call__(self, user, paswd):                                            
+                    print "Estoy en Autenticar"                                             
+                    if user == 'yani' and paswd == '123':                                   
+                        self.f(user, paswd)                                                 
+                    else:                                                                   
+                        print 'Error en los datos'                                          
+        </pre>
     </div>
     
     <div class="step slide" data-x="500" data-y="2500" data-rotate="-45" data-z="-500">
         <p id="pagina">24</p>
         <q>
-            <strong></strong></br>
+            <strong>Decoradores</strong></br>
         </q>
+        <pre>
+            <b>@Autenticar</b>                                                                    
+            def Login(u, p):                                                                
+                print "Estoy en Login"                                                      
+                print 'Bienvenido'                                                          
+                                                                                            
+            <b>@Autenticar</b>                                                                     
+            def ver_correo(u, p):                                                           
+                print "Estoy en ver_correo"                                                 
+                print 'Hola mundo'                                                          
+                                                                                            
+            user = raw_input('Introduzca su usuario:')                                      
+            paswd = raw_input('Introduzca password:')                                       
+            Login(user, paswd)                                                              
+            ver_correo(user, paswd)
+        </pre>
     </div>
     <div class="step slide" data-x="1700" data-y="2500">
         <p id="pagina">25</p>
         <q>
-            <strong></strong></br>
+            <strong>Un poco de programación funcional</strong></br>
         </q>
+        <ul>
+            <li>Los elementos básicos de la PF son las funciones map,
+            reduce, filter y el operador lambda.</br>
+            >> reduce(lambda x, y: x+y, [1, 2, 3, 4, 5])
+            ((((1+2)+3)+4)+5)
+            </li>
+            <li>Dificil de entender al principio, estas pocas funciones (y los
+            operadores básicos) son casi suficientes para escribir
+            cualquier programa
+            </li>
+            <li>
+            Las sentencias de control de flujo de datos
+            (flow control statements) pueden ser
+            manejadas en su totalidad en un estilo
+            funcional usando exclusivamente las
+            funciones y operadores de la PF
+            </li>
+        </ul>
+        </br>
+        <b>http://docs.python.org/2/library/functions.html</b>
     </div>
     
     <div class="step slide" data-x="3000" data-y="2500">
         <p id="pagina">26</p>
         <q>
-            <strong></strong></br>
+            <strong>Programación Funcional</strong></br>
         </q>
+        <pre>
+        # Control básico basado en sentencias
+        if cond1:
+            func1()
+        elif cond2:
+            func2()
+        else:
+            func3()
+        
+        # Equivalente
+        (cond1 and func1()) or (cond2 and func2()) or (func3())
+        </pre>
+
     </div>
 
     <div class="step slide" data-x="4000" data-y="2500" data-rotate="-90">
         <p id="pagina">27</p>
         <q>
-            <strong></strong></br>
+            <strong>Programación Funcional</strong></br>
         </q>
+        <pre>
+        # Ejemplo
+
+        >>> x = 3
+        >>> def pr(s): return s
+        >>> (x==1 and pr('uno')) or (x==2 and pr('dos')) or (pr('otro'))
+        'otro'
+        
+        >>> x = 2
+        >>> (x==1 and pr('uno')) or (x==2 and pr('dos')) or (pr('otro'))
+        'two'
+
+        </pre>
     </div>
     <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
     </div>
