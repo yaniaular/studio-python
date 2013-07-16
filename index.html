@@ -36,8 +36,9 @@
                Postgres con <b>Python</b>
            </q>
        </center>
-       </br></br></br>Ing. Humberto Arocha
-       </br>Lic. Yanina Aular
+       </br></br></br>Humberto Arocha
+       </br>Katherine Zaoral
+       </br>Yanina Aular
     </div>
 
     <div class="step slide" data-x="0" data-y="-1500">
@@ -588,14 +589,14 @@
         <pre>
         # Ejemplo
 
-        >>> x = 3
-        >>> def pr(s): return s
-        >>> (x==1 and pr('uno')) or (x==2 and pr('dos')) or (pr('otro'))
-        'otro'
-        
-        >>> x = 2
-        >>> (x==1 and pr('uno')) or (x==2 and pr('dos')) or (pr('otro'))
-        'two'
+     >>> x = 3
+     >>> def pr(s): return s
+     >>> (x==1 and pr('uno')) or (x==2 and pr('dos')) or (pr('otro'))
+     'otro'
+     
+     >>> x = 2
+     >>> (x==1 and pr('uno')) or (x==2 and pr('dos')) or (pr('otro'))
+     'two'
 
         </pre>
     </div>
@@ -611,13 +612,136 @@
     <div class="step slide" data-x="4000" data-y="500" data-rotate="-90">
         <p id="pagina">29</p>
         <q>
-            <strong>wxPython</strong></br>
+            <strong>Librería psycpog2</br>PostgreSQL con Python</strong></br>
+        </q>
+        <ul>
+            <li>Instalación: </br>sudo apt-get install python-psycopg2</li>
+            <li>Crear usuario</li>
+            <li>Crear base de datos</li>
+            <li>Establecer autenticacion md5 al owner</li>
+            <li>Reiniciar servidor postgres</li>
+        </ul>
+        <pre>
+        </pre>
+        http://initd.org/psycopg/docs/
+    </div>
+    <div class="step slide" data-x="4000" data-y="-500" data-rotate="-90">
+        <p id="pagina">30</p>
+        <q>
+            <strong>Librería psycpog2</br>PostgreSQL con Python</strong></br>
+        </q>
+        <pre>
+        import psycopg2
+        
+        conexion = psycopg2.connect(dbname="prueba", 
+        user="estudiante", password="estudiante")
+        
+        cur = conexion.cursor()
+        
+        <b>cur.execute("CREATE TABLE test (id serial \
+        PRIMARY KEY, num integer, data varchar);")
+        </b>
+
+        conexion.commit()
+        cur.close()
+        conexion.close()
+        </pre>
+    </div>
+
+    <div class="step slide" data-x="4000" data-y="-1500" data-rotate="-90">
+        <p id="pagina">31</p>
+        <q>
+            <strong>Librería psycpog2</br>PostgreSQL con Python</strong></br>
+        </q>
+        <pre>
+        import psycopg2
+        
+        conexion = psycopg2.connect(dbname="prueba", 
+        user="estudiante", password="estudiante")
+        
+        cur = conexion.cursor()
+        
+        <b>cur.execute("INSERT INTO test (num, data) \
+        VALUES (%s, %s)", (100, "abc'def"))
+        </b>
+
+        conexion.commit()
+        cur.close()
+        conexion.close()
+        </pre>
+    </div>
+    
+    <div class="step slide" data-x="5000" data-y="-1500">
+        <p id="pagina">32</p>
+        <q>
+            <strong>Librería psycpog2</br>PostgreSQL con Python</strong></br>
+        </q>
+        <pre>
+        try:
+            cur.execute("SELECT * FROM tabla;")
+        except Exception, e:
+            print "La tabla no existe"
+
+        try:
+            cur.execute("SELECT * FROM test;")
+        except Exception, e:
+            print "La tabla no existe"
+        
+        cur.query
+        print cur.fetchone()
+        </pre>
+    </div>
+
+    <div class="step slide" data-x="5000" data-y="-500">
+        <p id="pagina">33</p>
+        <q>
+            <strong>Librería psycpog2</br>PostgreSQL con Python</strong></br>
+        </q>
+        <pre>
+        
+        cur.execute("INSERT INTO test (num, data) \
+        VALUES (%s, %s)", (10, "hola"))
+        
+        cur.execute("INSERT INTO test (num, data) \
+        VALUES (%s, %s)", (140, "chao"))
+
+        cur.execute("SELECT * FROM test;")
+        
+        print cur.rowcount
+
+        for i in cur.fetchall():
+            print i
+        </pre>
+    </div>
+
+    <div class="step slide" data-x="5000" data-y="500">
+        <p id="pagina">34</p>
+        <q>
+            <strong>Librería psycpog2</br>PostgreSQL con Python</strong></br>
+        </q>
+        <pre>
+
+        cur.execute("delete from test where id = %d" % 1)
+        
+        cur.execute("select * from test;")
+
+        print cur.rowcount
+
+        for i in cur.fetchall():
+            print i
+        </pre>
+    </div>
+
+    <div class="step slide" data-x="5000" data-y="1500">
+        <p id="pagina">35</p>
+        <q>
+            <strong></strong></br>
         </q>
         <pre>
         </pre>
     </div>
-    <div class="step slide" data-x="4000" data-y="-500" data-rotate="-90">
-        <p id="pagina">30</p>
+    <div class="step slide" data-x="5000" data-y="2500">
+        <p id="pagina">36</p>
         <q>
             <strong></strong></br>
         </q>
