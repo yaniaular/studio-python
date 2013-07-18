@@ -603,8 +603,18 @@
     <div class="step slide" data-x="4000" data-y="1500" data-rotate="-90">
         <p id="pagina">28</p>
         <q>
-            <strong>Expresiones regulares</strong></br>
+            <strong>Manejo de base de datos desde python</strong></br>
         </q>
+        <ul>    
+            <li>psycopg2</li> Es el adaptador de PostgreSQL más popular para python.
+            Es un wrapper de la librería libpq (la librería cliente oficial de PostgreSQl)
+            y puede conectarse a servidores de PostgreSQL de cualquier versión.
+            <li>PyGreSQL</li>
+            <li>pyPgSQL</li>
+            <li>mxODBC</li>
+            <li>pyodbc</li>
+            <li>py-postgresql</li>
+        <ul>
         <pre>
         </pre>
     </div>
@@ -735,13 +745,86 @@
     <div class="step slide" data-x="5000" data-y="1500">
         <p id="pagina">35</p>
         <q>
+            <strong>Librerías para interfaz gráfica en Python</strong></br>
+        </q>
+        <ul>
+            <li>TkInter</li> es un módulo que nos permite construir interfaces 
+            gráficas de usuario multiplataforma en Python. Es robusto, 
+            maduro y muy sencillo de aprender y de utilizar, contando 
+            con una amplia documentación.
+            <li>WxPython</li> wxPython cuenta con más y mejores widgets 
+            que TKinter, y ofrece un muy buen aspecto en todas las 
+            plataformas, utilizando MFC en Windows y GTK en Linux.
+            <li>PyGtk</li> Binding de Gtk, usada para desarrollos en GNOME.
+            <li>PyQT</li> Binding de QT, usada para desarrollos en KDE.
+        </ul>
+    </div>
+    <div class="step slide" data-x="5000" data-y="2500">
+        <p id="pagina">36</p>
+        <q>
+            <strong>Widgets de wxPython</strong></br>
+        </q>
+        <ul>
+            <li><b>Widgets base</b></li>
+            <ul>
+                <li>wx.Windows</li>
+                <li>wx.Control</li>
+                <li>wx.ControlWithItem</li>
+            </ul>
+            <li><b>Widgets de primer nivel</b></li>
+            <ul>
+                <li>wx.Frame</li>
+                <li>wx.Dialog</li>
+                <li>wx.MDIParentFrame</li>
+                <li>wx.MDIChildFrame</li>
+                <li>wx.PopupWindow</li>
+            <ul>
+        </ul>
+        <pre>
+        </pre>
+    </div>
+    <div class="step slide" data-x="5000" data-y="3500">
+        <p id="pagina">37</p>
+        <q>
+            <strong>Interfaz en Python con wxPython</strong></br>
+        </q>
+
+        <pre>
+        #!/usr/bin/python
+        # simple.py
+        import wx
+        app = wx.App()
+        frame = wx.Frame(None, -1, 'simple.py')
+        frame.Show()
+        app.MainLoop()
+        </pre>
+    </div>
+    <div class="step slide" data-x="4000" data-y="3500">
+        <p id="pagina">38</p>
+        <q>
             <strong></strong></br>
+        </q>
+        <ul>
+            <li>wx.Window</li> Base Widgets, no se usa directamente, provee las funcioanlidades basicas
+            <li>wx.App</li> objeto aplicacion, siempre debe colocarse
+            <li>wx.Frame y wx.Dialog</li> Top Level Widgets
+            <li>wx.StaticText</li> StaticWidgets
+            <li>wx.Panel</li> Container
+            <li>wx.Button</li> Dynamic Widgets
+            <li>wx.Menu y wx.MenuBar</li> Other Widgets
+        <pre>
+        </pre>
+    </div>
+    <div class="step slide" data-x="3000" data-y="3500">
+        <p id="pagina">39</p>
+        <q>
+            <strong>wx.Panel</strong></br>
         </q>
         <pre>
         </pre>
     </div>
-    <div class="step slide" data-x="5000" data-y="2500">
-        <p id="pagina">36</p>
+    <div class="step slide" data-x="2000" data-y="3500">
+        <p id="pagina">40</p>
         <q>
             <strong></strong></br>
         </q>
