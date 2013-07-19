@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1024" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>impress.js | presentation tool based on the power of CSS3 transforms and transitions in modern browsers | by Bartek Szopka @bartaz</title>
+    <title>Python + PostgreSQL + Interfaz</title>
     
-    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
-    <meta name="author" content="Bartek Szopka" />
-
+    <meta name="description" content="Curso de Python + PostgreSQL + Interfaz" />
+    <meta name="author" content="Yanina Aular" />
+<!--
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
-
+    -->
     <link href="css/impress-demo.css" rel="stylesheet" />
     
     <link rel="shortcut icon" href="favicon.png" />
@@ -764,10 +764,11 @@
         <q>
             <strong>Widgets de wxPython</strong></br>
         </q>
+        Instalación: sudo apt-get install python-wxgtk2.8
         <ul>
             <li><b>Widgets base</b></li>
             <ul>
-                <li>wx.Windows</li>
+                <li>wx.Window</li>
                 <li>wx.Control</li>
                 <li>wx.ControlWithItem</li>
             </ul>
@@ -775,8 +776,7 @@
             <ul>
                 <li>wx.Frame</li>
                 <li>wx.Dialog</li>
-                <li>wx.MDIParentFrame</li>
-                <li>wx.MDIChildFrame</li>
+                <li>wx.MDIParentFrame y wx.MDIChildFrame</li>
                 <li>wx.PopupWindow</li>
             <ul>
         </ul>
@@ -787,9 +787,11 @@
         <p id="pagina">37</p>
         <q>
             <strong>Interfaz en Python con wxPython</strong></br>
+            <strong>wx.Window y wx.Frame</strong>
         </q>
-
+Crear un archivo simple.py usando los métodos de wx.Windows en wx.Frame
         <pre>
+     
         #!/usr/bin/python
         # simple.py
         import wx
@@ -802,29 +804,178 @@
     <div class="step slide" data-x="4000" data-y="3500">
         <p id="pagina">38</p>
         <q>
-            <strong></strong></br>
+            <strong>wx.Window y wx.Frame</strong></br>
         </q>
+        wx.Window es una clase base de la cual muchos widgets heredan. 
+        Por ejemplo, wx.Frame hereda de wx.Window. 
+        Es decir, que podemos usar métodos de wx.Windows para todos
+        los descendientes.
         <ul>
-            <li>wx.Window</li> Base Widgets, no se usa directamente, provee las funcioanlidades basicas
-            <li>wx.App</li> objeto aplicacion, siempre debe colocarse
-            <li>wx.Frame y wx.Dialog</li> Top Level Widgets
-            <li>wx.StaticText</li> StaticWidgets
-            <li>wx.Panel</li> Container
-            <li>wx.Button</li> Dynamic Widgets
-            <li>wx.Menu y wx.MenuBar</li> Other Widgets
+            <li>SetTitle(string title) - Cambiar el título de wxframe o wxdialog.</li>
+            <li>SetSize(wx.Size size) - Cambia el tamaño de la ventana.</li>
+            <li>Show(show=True) - Para mostrar o no la ventana en pantalla.</li>
+            <li>Move(wx.Point pos) - Mueve la ventana a la posición dada.</li>
+        </ul>
+</div>
+    <div class="step slide" data-x="4000" data-y="3500" data-z="-1500">
+        <p id="pagina">39</p>
+        <q>
+            <strong>wx.Window y wx.Frame</strong>
+        </q>
+Crear script size.py usando los métodos de wx.Windows
         <pre>
+        #!/usr/bin/python
+        # -*- coding: utf-8 -*-
+        import wx                                                                       
+        class Example(wx.Frame):                                                        
+            def __init__(self, parent, title):                                          
+                super(Example, self).__init__(parent, title=title,                      
+                    size=(250, 200))                                                    
+                self.Move((800, 250)) # tambien self.Centre()                                                          
+                self.Show()                                                             
+        if __name__ == '__main__':                                                      
+            app = wx.App()                                                              
+            Example(None, title='Size')                                                 
+            app.MainLoop() 
         </pre>
     </div>
     <div class="step slide" data-x="3000" data-y="3500">
         <p id="pagina">39</p>
         <q>
-            <strong>wx.Panel</strong></br>
+            <strong>wx.Dialog</strong></br>
         </q>
+En wxPython, puedes usar o crear 
+tus propios diálogos. El ejemplo a continuación es el esqueleto
+para poder crear nuestro propio diálogo.
+Crear simpledialog.py.
         <pre>
+        #!/usr/bin/python
+        import wx
+        class MyDialog(wx.Dialog):
+            def __init__(self, parent, id, title):
+                wx.Dialog.__init__(self, parent, id, title)
+        class MyApp(wx.App):
+            def OnInit(self):
+                dia = MyDialog(None, -1, "simpledialog.py")
+                dia.ShowModal()
+                dia.Destroy()
+                return True
+        app = MyApp(0)
+        app.MainLoop()
         </pre>
     </div>
     <div class="step slide" data-x="2000" data-y="3500">
         <p id="pagina">40</p>
+        <q>
+            <strong>Widgets Estáticos</strong></br>
+        </q>
+    
+    Estos widgets nos ayudan a mostrar información que no podrá
+    ser editada por el usuario.
+    <ul>
+        <li>wx.Gauge</li>
+        <li>wx.StaticText</li>
+        <li>wx.StaticBitmap</li>
+        <li>wx.StaticLine</li>
+        <li>wx.StaticBox</li>
+    </ul>
+        <pre>
+        </pre>
+    </div>
+    <div class="step slide" data-x="1000" data-y="3500">
+        <p id="pagina">41</p>
+        <q>
+            <strong>wx.StaticText</strong></br>
+        </q>
+El widget wx.StaticText nos permite visualizar texto estático
+en la ventana.
+</br></br>
+<b>wx.StaticText Styles:</b>
+</br></br>
+<ul>
+    <li>wx.ALIGN_RIGHT</li>
+    <li>wx.ALIGN_LEFT</li>
+    <li>wx.ALIGN_CENTER / wx.ALIGN_CENTRE</li>
+    <li>wx.ST_NO_AUTORESIZE</li>
+</ul>
+Crear un archivo statictext.py usando el widget
+    </div>
+    <div class="step slide" data-x="0" data-y="3500">
+        <p id="pagina">42</p>
+        <q>
+            <strong>Containers</strong></br>
+        </q>
+Los Containers contienen otros widgets. Esos widgets son llamados hijos.
+        <ul>
+            <li>wx.Panel</li>
+            <li>wx.Notebook</li>
+            <li>wx.ScrolledWindow</li>
+            <li>wx.SplitterWindow</li>
+        </ul>
+        <pre>
+        </pre>
+    </div>
+    <div class="step slide" data-x="-1000" data-y="3500">
+        <p id="pagina">43</p>
+        <q>
+            <strong>wx.Panel</strong></br>
+        </q>
+        <pre>
+        #!/usr/bin/python
+        # layout.py
+        import wx
+        class MyFrame(wx.Frame):
+            def __init__(self, parent, id, title):
+                wx.Frame.__init__(self, parent, id, title, wx.DefaultPosition, wx.Size(250, 50))
+
+                panel = wx.Panel(self, -1)
+                wx.Button(panel, -1, "Button1", (0,0))
+                wx.Button(panel, -1, "Button2", (80,0))
+                wx.Button(panel, -1, "Button3", (160,0))
+        class MyApp(wx.App):
+            def OnInit(self):
+                frame = MyFrame(None, -1, 'layout.py')
+                frame.Show(True)
+                frame.Centre()
+                return True
+        app = MyApp(0)
+        app.MainLoop()
+        </pre>
+    </div>
+    <div class="step slide" data-x="-2000" data-y="3500">
+        <p id="pagina">44</p>
+        <q>
+            <strong></strong></br>
+        </q>
+        <pre>
+        </pre>
+    </div>
+    <div class="step slide" data-x="-2000" data-y="4000" data-z="-1000">
+        <p id="pagina">45</p>
+        <q>
+            <strong></strong></br>
+        </q>
+        <pre>
+        </pre>
+    </div>
+    <div class="step slide" data-x="-1000" data-y="4000" data-z="-2000">
+        <p id="pagina">46</p>
+        <q>
+            <strong></strong></br>
+        </q>
+        <pre>
+        </pre>
+    </div>
+    <div class="step slide" data-x="0" data-y="4500">
+        <p id="pagina">47</p>
+        <q>
+            <strong></strong></br>
+        </q>
+        <pre>
+        </pre>
+    </div>
+    <div class="step slide" data-x="1000" data-y="4500">
+        <p id="pagina">48</p>
         <q>
             <strong></strong></br>
         </q>
